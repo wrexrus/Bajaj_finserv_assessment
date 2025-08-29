@@ -18,8 +18,8 @@ app.post("/bfhl", (req, res) => {
       });
     }
 
-    let even_numbers = [];
     let odd_numbers = [];
+    let even_numbers = [];
     let alphabets = [];
     let special_characters = [];
     let sum = 0;
@@ -40,26 +40,24 @@ app.post("/bfhl", (req, res) => {
       }
     });
 
-    const concat_string = alphabets
-      .join("")            
-      .split("")           
-      .reverse()             
-      .map((ch, i) =>
-        i % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase()
-      )
-      .join("");
 
+    const concat_string = alphabets
+      .join("")         
+      .split("")        
+      .reverse()         
+      .map((ch, i) => i % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase())
+      .join("");
 
     res.status(200).json({
       is_success: true,
-      user_id: "john_doe_17091999",   
-      email: "john@xyz.com",
-      roll_number: "ABCD123",
+      user_id: "rushabh_wagh_20122002",
+      email: "rushabhwagh125@gmail.com",
+      roll_number: "22BCE10364",
       odd_numbers,
       even_numbers,
       alphabets,
       special_characters,
-      sum: sum.toString(),           
+      sum: sum.toString(),
       concat_string
     });
 
@@ -73,9 +71,5 @@ app.post("/bfhl", (req, res) => {
 });
 
 
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
 
 module.exports = app;
